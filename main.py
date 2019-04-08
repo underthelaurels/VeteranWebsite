@@ -1,21 +1,16 @@
-# Imports
-from flask import jsonify
-from flask import Flask, request
+import os
 
-#python2 /home/ctom96/google-cloud-sdk/bin/dev_appserver.py app.yaml
+from flask import Flask, render_template
 
-# create master app object
+# Create app for Google App Engine
 app = Flask(__name__)
 
+# register routes in the 'routes.py' file
+from auth import auth
+app.register_blueprint(auth)
+
+# register homepage
 @app.route('/')
-def index():
-    return 'Hello, world! /hello will return data after POST request'
+def homepage():
+    return render_template('homepage.html')
 
-@app.route('/hello', methods=['POST'])
-def hello():
-    resp = {
-        "status":"success",
-        "message":"Hello from the API!"
-    }
-
-    return jsonify(resp)
