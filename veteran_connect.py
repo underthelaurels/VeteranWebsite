@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 def create_app(test_config=None):
     # create and configure the app
@@ -29,6 +29,10 @@ def create_app(test_config=None):
 
     from auth import auth
     app.register_blueprint(auth)
+
+    @app.route('/')
+    def show_hompage():
+        return render_template('homepage.html')
 
     return app
 
