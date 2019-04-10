@@ -4,18 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>VeteranConnect | {% block title%}{% endblock %}</title>
+    <title>Veteran Connect | {% block title%}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
     <nav>
-        <h1>VeteranConnect</h1>
-        <!-- Future navigation components here -->
+        <div class="nav-wrapper blue darken-4">
+            <a href="/" class="brand-logo">Veteran Connect</a>
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">Sign Out</a></li>
+                <li class="divider"></li>
+                <li><a href="#!">Settings</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="sass.html">Employment</a></li>
+                <li><a href="badges.html">Comunity Service</a></li>
+                <li><a href="collapsible.html">Chat</a></li>
+                <li>
+                    <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                        {% if session['user_id'] %}
+                        {{session['username']}}
+                        {% else %}
+                        Anonymous
+                        {% endif %}
+                    </a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <header>
-        {% block header %}{% endblock %}
-    </header>
-    <div id="content">
+    <div id="content" class="container">
         {% block content %}{% endblock %}
     </div>
+    <!-- future footer -->
+    <script>
+        console.log("pls")
+        $(document).ready(function() {
+            $(".dropdown-trigger").dropdown();
+        })
+    </script>
 </body>
 </html>

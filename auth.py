@@ -94,8 +94,10 @@ def login_user():
         }
 
         return jsonify(resp)
+        
     session.clear()
     session['user_id'] = user['id']
+    session['username'] = username
 
     resp = {
         "status":"success",

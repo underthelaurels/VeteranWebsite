@@ -34,6 +34,10 @@ def create_app(test_config=None):
     def show_hompage():
         return render_template('homepage.html')
 
+    @app.route('/base')
+    def show_base():
+        return render_template('base.html')
+
     return app
 
 if __name__ == '__main__':
