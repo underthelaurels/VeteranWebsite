@@ -9,34 +9,57 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="nav-wrapper blue darken-4">
-            <a href="/" class="brand-logo">Veteran Connect</a>
-            <ul id="dropdown1" class="dropdown-content">
-                <li><a href="#!">Sign Out</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">Settings</a></li>
-            </ul>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="sass.html">Employment</a></li>
-                <li><a href="badges.html">Comunity Service</a></li>
-                <li><a href="collapsible.html">Chat</a></li>
-                <li>
-                    <a class="dropdown-trigger" href="#!" data-target="dropdown1">
-                        {% if session['user_id'] %}
-                        {{session['username']}}
-                        {% else %}
-                        Anonymous
-                        {% endif %}
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div id="content" class="container">
+    <header>
+        <nav>
+            <div class="nav-wrapper blue darken-4">
+                <a href="/" class="brand-logo">Veteran Connect</a>
+                <ul id="dropdown1" class="dropdown-content">
+                    <li><a href="#!">Sign Out</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Settings</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Employment</a></li>
+                    <li><a href="badges.html">Comunity Service</a></li>
+                    <li><a href="collapsible.html">Chat</a></li>
+                    <li>
+                        <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                            {% if session['user_id'] %}
+                            {{session['username']}}
+                            {% else %}
+                            Anonymous
+                            {% endif %}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        
         {% block content %}{% endblock %}
-    </div>
+        
+    </main>
+
     <!-- future footer -->
+    <footer class="page-footer blue darken-4">
+        <div class="container blue darken-4">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">Veteran Connect</h5>
+              <p class="grey-text text-lighten-4">© 2019 A G I L E   E N H A N C E D </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+              <h5 class="white-text">Links</h5>
+              <ul>
+                <li><a class="grey-text text-lighten-3" href="#!">Who We Are</a></li>
+                <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </footer>
+
     <script>
         console.log("pls")
         $(document).ready(function() {
