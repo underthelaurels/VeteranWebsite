@@ -1,4 +1,4 @@
-from flask import Blueprint, jsonify, render_template, request, flash, session
+from flask import Blueprint, jsonify, render_template, request, flash, session, redirect, url_for
 from flask import g
 
 from db import get_db
@@ -61,10 +61,23 @@ def register_user():
     }
 
     return jsonify(resp)
+
+@auth.route('/site/user/login', methods=['POST'])
+def site_login_user():
+    login_user()
+    
+    if session.get('username') is not None:
+        flash("Login successful!", "success")
+        return redirect('/')
+    else:
+        flash("Unable to Login!", "error")
+        return redirect('/')
+
         
 @auth.route('/user/login', methods=['POST'])
 def login_user():
     error = None
+    print "form:", request.form
     username = request.form['username']
     password = request.form['password']
 

@@ -6,24 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Veteran Connect | {% block title%}{% endblock %}</title>
     <link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+    <script src="/static/js/materialize.min.js"></script>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class="flashes" style="display: none;">
+            {% for category, message in messages %}
+            <li class="flash-message-{{ category }}">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
 </head>
 <body>
     <header>
         <nav>
             <div class="nav-wrapper blue darken-4">
                 <a href="/" class="brand-logo">Veteran Connect</a>
-                <ul id="dropdown1" class="dropdown-content">
-                    <li><a href="#!">Sign Out</a></li>
+                <ul id="nav-dropdown" class="dropdown-content">
+                    {% if session['user_id'] %}
+                    <li><span id="sign-out-dropdown">Sign Out</span></li>
+                    {% else %}
+                    <li><a href="/login">Sign In</a></li>
+                    {% endif %}
+                    
                     <li class="divider"></li>
                     <li><a href="#!">Settings</a></li>
                 </ul>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Employment</a></li>
-                    <li><a href="badges.html">Comunity Service</a></li>
-                    <li><a href="collapsible.html">Chat</a></li>
+                    <li><a href="#">Employment</a></li>
+                    <li><a href="#">Comunity Service</a></li>
+                    <li><a href="#">Chat</a></li>
                     <li>
-                        <a class="dropdown-trigger" href="#!" data-target="dropdown1">
+                        <a class="dropdown-trigger" href="#!" data-target="nav-dropdown">
                             {% if session['user_id'] %}
                             {{session['username']}}
                             {% else %}
@@ -61,10 +76,68 @@
     </footer>
 
     <script>
-        console.log("pls")
-        $(document).ready(function() {
-            $(".dropdown-trigger").dropdown();
-        })
+        // Init materialize stuff
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.dropdown-trigger');
+            options = {
+                "alignment":"right"
+            }
+            var instances = M.Dropdown.init(elems, options);
+        });
+
+        // Process Flashes
+        var success_flashes = document.getElementsByClassName("flash-message-success");
+        for(var i = 0; i < success_flashes.length; i++) {
+            M.toast({
+                html: success_flashes[0].innerHTML,
+                classes: "rounded blue"
+            })
+        }
+
+        var success_flashes = document.getElementsByClassName("flash-message-error");
+        for(var i = 0; i < success_flashes.length; i++) {
+            M.toast({
+                html: success_flashes[0].innerHTML,
+                classes: "rounded red"
+            })
+        }
+        
     </script>
+    <script>
+        // const BASE_URL = 'http://35.245.223.73'; // Google Base URL
+        const BASE_URL = 'http://127.0.01:5000'
+
+        window.BASE_URL = BASE_URL;
+
+        // functions for actions
+
+        function signOut(username) {
+            if (!username) {
+                return false;
+            }
+
+            fetch(BASE_URL + '/user/logout', {
+                method: "POST",
+                body: {
+                    'username':username
+                }
+            }).then(resp => {
+                console.log("Logged out!")
+                location.reload();
+            })
+
+        }
+
+        /*
+        EVENT LISTENERS
+        */
+        dropdown = document.getElementById("sign-out-dropdown")
+        if (dropdown) {
+            dropdown.addEventListener('click', function() {
+                signOut('{{session['username']}}')
+            })
+        }
+    </script>
+    <script type="text/javascript" src="/static/js/base.js"></script>
 </body>
 </html>
