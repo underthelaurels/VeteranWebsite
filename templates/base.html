@@ -89,7 +89,7 @@
         var success_flashes = document.getElementsByClassName("flash-message-success");
         for(var i = 0; i < success_flashes.length; i++) {
             M.toast({
-                html: success_flashes[0].innerHTML,
+                html: success_flashes[i].innerHTML,
                 classes: "rounded blue"
             })
         }
@@ -97,7 +97,7 @@
         var success_flashes = document.getElementsByClassName("flash-message-error");
         for(var i = 0; i < success_flashes.length; i++) {
             M.toast({
-                html: success_flashes[0].innerHTML,
+                html: success_flashes[i].innerHTML,
                 classes: "rounded red"
             })
         }
