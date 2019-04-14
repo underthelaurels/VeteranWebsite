@@ -1,6 +1,12 @@
 import os
 
 from flask import Flask, render_template
+import click
+
+# personal imports
+import db
+from auth import auth
+from user import user
 
 def create_app(test_config=None):
     # create and configure the app
@@ -24,11 +30,11 @@ def create_app(test_config=None):
         pass
 
     # import other files and modules
-    import db
     db.init_app(app)
 
-    from auth import auth
     app.register_blueprint(auth)
+
+    app.register_blueprint(user)
 
     @app.route('/')
     def show_hompage():
@@ -39,6 +45,8 @@ def create_app(test_config=None):
         return render_template('base.html')
 
     return app
+
+
 
 if __name__ == '__main__':
     app = create_app()

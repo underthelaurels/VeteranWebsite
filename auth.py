@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, render_template, request, flash, session, redirect, url_for
 from flask import g
 
-from db import get_db
+import db
 
 auth = Blueprint('auth', __name__)
 
@@ -29,8 +29,9 @@ def register_user():
     error = None
     username = request.form['username']
     password = request.form['password']
-
-    db = get_db()
+    first_name = request.form.get('first_name')
+    last_name = request.form.get('last_name')
+    email = request.form.get('email')
 
     if request.method != 'POST':
         error = "Invalid request method"
@@ -39,12 +40,11 @@ def register_user():
         error = "Username is required"
     elif not password:
         error = "Password is required"
-    elif db.execute('SELECT id FROM users WHERE username = ?', (username,)).fetchone() is not None:
+    elif db.user_exists(username):
         error = "Username {} is already registered".format(username)
     
     if error is None:
-        db.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, password))
-        db.commit()
+        db.create_user(username, password, first_name, last_name, email)
 
         resp = {
             "status": "success",
@@ -81,8 +81,6 @@ def login_user():
     username = request.form['username']
     password = request.form['password']
 
-    db = get_db()
-
     if request.method != 'POST':
         error = "Invalid request method"
 
@@ -91,7 +89,7 @@ def login_user():
     elif not password:
         error = "Password is required"
 
-    user = db.execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
+    user = db.get_user_by_username(username)
 
     if user is None:
         error = "Incorrect username"
@@ -109,13 +107,13 @@ def login_user():
         return jsonify(resp)
         
     session.clear()
-    session['user_id'] = user['id']
+    session['user_id'] = user['user_id']
     session['username'] = username
 
     resp = {
         "status":"success",
         "message":"User logged in",
-        "user_id":user['id']
+        "user_id":user['user_id']
     }
 
     return jsonify(resp)
@@ -127,4 +125,4 @@ def load_logged_in_user():
     if user_id is None:
         g.user = None
     else:
-        g.user = get_db().execute('SELECT * FROM users WHERE id = ?', (user_id,)).fetchone()
+        g.user = db.get_user_by_id(user_id)

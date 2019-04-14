@@ -22,16 +22,17 @@
     <header>
         <nav>
             <div class="nav-wrapper blue darken-4">
-                <a href="/" class="brand-logo">Veteran Connect</a>
+                <a href="/" class="brand-logo" id="veteran-connect-logo">Veteran Connect</a>
                 <ul id="nav-dropdown" class="dropdown-content">
                     {% if session['user_id'] %}
                     <li><span id="sign-out-dropdown">Sign Out</span></li>
+                    <li class="divider"></li>
+                    <li><a href="/profile">Profile</a></li>
                     {% else %}
                     <li><a href="/login">Sign In</a></li>
+                    <li><a href="/register">Register</a></li>
                     {% endif %}
                     
-                    <li class="divider"></li>
-                    <li><a href="#!">Settings</a></li>
                 </ul>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
                     <li><a href="#">Employment</a></li>
@@ -104,8 +105,8 @@
         
     </script>
     <script>
-        const BASE_URL = 'http://35.245.223.73'; // Google Base URL
-        // const BASE_URL = 'http://127.0.01:5000'
+        // const BASE_URL = 'http://35.245.223.73'; // Google Base URL
+        const BASE_URL = 'http://127.0.01:5000'
 
         window.BASE_URL = BASE_URL;
 
@@ -138,6 +139,6 @@
             })
         }
     </script>
-    <script type="text/javascript" src="/static/js/base.js"></script>
+    <!-- <script type="text/javascript" src="/static/js/base.js"></script> -->
 </body>
 </html>
