@@ -6,3 +6,12 @@
     padding-left: 20px;
 }
 
+.dropdown-trigger {
+    font-weight: bold;
+}
+
+
+/* Login/register pages */
+.asterisk {
+    color: red;
+}

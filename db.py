@@ -32,7 +32,7 @@ def user_exists(username):
     """Checks to see if user exists
     """
     database = get_db()
-    return database.execute('SELECT id FROM users WHERE username = ?', (username,)).fetchone() is not None
+    return database.execute('SELECT user_id FROM users WHERE username = ?', (username,)).fetchone() is not None
 
 def get_user_by_id(user_id):
     """Gets the user with the associated user_id
@@ -43,7 +43,7 @@ def get_user_by_username(username):
     """Gets the user with the associated user_id
     """
     return get_db().execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
-    
+
 def init_app(app):
     app.teardown_appcontext(close_db)
     app.cli.add_command(init_db_command)

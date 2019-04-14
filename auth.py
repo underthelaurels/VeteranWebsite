@@ -24,6 +24,17 @@ def logout_user():
 
     return jsonify(resp)
 
+@auth.route('/site/user/register', methods=['POST'])
+def site_register_user():
+    register_user()
+    
+    if session.get('username') is not None:
+        flash("Registration successful!", "success")
+        return redirect('/')
+    else:
+        flash("Unable to register!", "error")
+        return redirect('/')
+
 @auth.route('/user/register', methods=['POST'])
 def register_user():
     error = None
@@ -52,6 +63,9 @@ def register_user():
             "username":username
         }
 
+        user = db.get_user_by_username(username)
+        session['user_id'] = user['user_id']
+        session['username'] = username
         return jsonify(resp)
     
     resp = {
