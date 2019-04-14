@@ -1,9 +1,47 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Home{% endblock %}</h1>
+<h1>{% block title %}Home{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-    <p>This is the homepage</p>
+<!-- Overview of what VeternConnect is all about -->
+<!-- We're fighting to give all veterans the opportunities they deserve -->
+<div class="image-container">
+    <img src="static/img/salute.jpg" alt="Veteran Saluting" class="responsive-img">
+    <h3><span>We're here to help veterans connect with other veterans and<span class="spacer"></span><br /><span
+                class="spacer"></span>their local communities</span></h3>
+</div>
+
+<div class="section center grey darken-2 white-text">
+    <div class="container homepage-cards">
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card-panel black-text">
+                    <h5>Employment</h5>
+                    <br />
+                    <i class="material-icons">work</i>
+                    <p class=>Find and post jobs catering specifically to veterans</p>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-panel black-text">
+                    <h5>Community Service</h5>
+                    <br />
+                    <i class="material-icons">trending_up</i>
+                    <p>Find local community service and volunteering opportunities, either as a veteran or for veterans</p>
+                </div>
+            </div>
+            <div class="col s12 m6 l4">
+                <div class="card-panel black-text">
+                    <h5>Connections</h5>
+                    <br />
+                    <i class="material-icons">message</i>
+                    <p>Talk to other veterans and ask any questions you might have</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}

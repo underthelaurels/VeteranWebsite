@@ -15,3 +15,36 @@
 .asterisk {
     color: red;
 }
+
+/* Homepage */
+.image-container {
+    position: realative;
+    width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container h3 {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 100%;
+}
+
+.image-container h3 span {
+    color: white;
+    font: bold 24px/45px Helvetica, Sans-Serif;
+    background: rgba(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.image-container h3 span.spacer {
+    padding: 0 5px;
+}
+
+.homepage-cards i {
+    font-size: 80px;
+}

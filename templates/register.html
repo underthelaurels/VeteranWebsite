@@ -1,8 +1,7 @@
-
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Register{% endblock %}</h1>
+<h1>{% block title %}Register{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
@@ -41,16 +40,18 @@
                     <input class="s6" type="text" name="email" id="email">
                 </div>
             </div>
-            <button class="btn waves-effect blue darken-3" type="submit">
-                Register
-            </button>
+            <div class="row center-align">
+                <button class="btn waves-effect indigo darken-4" type="submit">
+                    Register
+                </button>
+            </div>
         </form>
 
     </div>
 </div>
 
 <script type="text/javascript">
-    window.onload = function() {
+    window.onload = function () {
         // set onchange handlers to validate passwords
         document.getElementById('password').onchange = validatePassword;
         document.getElementById('conf-password').onchange = validatePassword;

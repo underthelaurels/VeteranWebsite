@@ -8,3 +8,7 @@ user = Blueprint('user', __name__)
 @user.route('/profile', methods=['GET'])
 def user_profile():
     return render_template('profile.html')
+
+@user.route('/dashboard', methods=['GET'])
+def user_dashboard():
+    return render_template('dashboard.html')

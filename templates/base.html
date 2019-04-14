@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="/static/css/materialize.css">
     <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
     <script src="/static/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
         <ul class="flashes" style="display: none;">
@@ -21,7 +22,7 @@
 <body>
     <header>
         <nav>
-            <div class="nav-wrapper blue darken-4">
+            <div class="nav-wrapper light-blue darken-4">
                 <a href="/" class="brand-logo" id="veteran-connect-logo">Veteran Connect</a>
                 <ul id="nav-dropdown" class="dropdown-content">
                     {% if session['user_id'] %}
@@ -32,6 +33,7 @@
                     <li><a href="/login">Sign In</a></li>
                     <li><a href="/register">Register</a></li>
                     {% endif %}
+                    <li><a href="/dashboard">Dashboard</a></li>
                     
                 </ul>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -58,12 +60,12 @@
     </main>
 
     <!-- future footer -->
-    <footer class="page-footer blue darken-4">
-        <div class="container blue darken-4">
+    <footer class="page-footer light-blue darken-4">
+        <div class="container light-blue darken-4">
           <div class="row">
             <div class="col l6 s12">
               <h5 class="white-text">Veteran Connect</h5>
-              <p class="grey-text text-lighten-4">© 2019 A G I L E   E N H A N C E D </p>
+              <p class="grey-text text-lighten-4" style="white-space: pre;">© 2019 A G I L E   E N H A N C E D </p>
             </div>
             <div class="col l4 offset-l2 s12">
               <h5 class="white-text">Links</h5>
@@ -91,7 +93,7 @@
         for(var i = 0; i < success_flashes.length; i++) {
             M.toast({
                 html: success_flashes[i].innerHTML,
-                classes: "rounded blue"
+                classes: "rounded light-blue darken-4"
             })
         }
 
@@ -99,7 +101,7 @@
         for(var i = 0; i < success_flashes.length; i++) {
             M.toast({
                 html: success_flashes[i].innerHTML,
-                classes: "rounded red"
+                classes: "rounded red darken-4"
             })
         }
         
