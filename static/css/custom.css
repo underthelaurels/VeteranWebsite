@@ -19,10 +19,10 @@
 /* Homepage */
 .image-container {
     position: realative;
-    width: 100%;
 }
 
 .image-container img {
+    height: 100%;
     width: 100%;
 }
 
@@ -47,4 +47,22 @@
 
 .homepage-cards i {
     font-size: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    #desktop-salute {
+        display: none;
+    }
+    #mobile-salute {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #desktop-salute {
+        display: block;
+    }
+    #mobile-salute {
+        display: none;
+    }
 }

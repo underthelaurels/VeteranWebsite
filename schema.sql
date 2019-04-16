@@ -1,3 +1,5 @@
+-- Tables and Data surrounding a user
+
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS service_info;
 DROP TABLE IF EXISTS employee_info;
@@ -35,4 +37,47 @@ CREATE TABLE users (
         FOREIGN KEY (employer_id) REFERENCES employer_info(employer_id)
         FOREIGN KEY (employee_id) REFERENCES employee_info(employee_id)
 );
+
+-- Tables for the Chat system
+DROP TABLE IF EXISTS messages;
+
+CREATE TABLE messages (
+    message_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    sent TEXT NOT NULL,
+    message TEXT NOT NULL,
+    channel_id INTEGER NOT NULL,
+    channel_name TEXT NOT NULL,
+    sender TEXT NOT NULL,
+    sender_color TEXT NOT NULL
+)
+
+
+-- Tables for the Community Service section
+DROP TABLE IF EXISTS commuity_service_events;
+
+CREATE TABLE community_service_events (
+    event_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    date TEXT, 
+    time TEXT,
+    street_address TEXT,
+    city TEXT,
+    state TEXT
+)
+
+
+-- Tables for the Employment section
+DROP TABLE IF EXISTS jobs;
+
+CREATE TABLE jobs (
+    job_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL,
+    industry TEXT,
+    time_posted TEXT,
+    due_date TEXT
+)
+
+
+
 
