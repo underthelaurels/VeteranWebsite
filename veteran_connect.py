@@ -44,6 +44,10 @@ def create_app(test_config=None):
     def show_base():
         return render_template('base.html')
 
+    @app.route('/employment')
+    def show_employment():
+        return render_template('employment.html')
+
     return app
 
 
