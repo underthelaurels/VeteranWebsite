@@ -49,7 +49,7 @@ CREATE TABLE messages (
     channel_name TEXT NOT NULL,
     sender TEXT NOT NULL,
     sender_color TEXT NOT NULL
-)
+);
 
 
 -- Tables for the Community Service section
@@ -63,7 +63,7 @@ CREATE TABLE community_service_events (
     street_address TEXT,
     city TEXT,
     state TEXT
-)
+);
 
 
 -- Tables for the Employment section
@@ -76,7 +76,7 @@ CREATE TABLE jobs (
     industry TEXT,
     time_posted TEXT,
     due_date TEXT
-)
+);
 
 
 
