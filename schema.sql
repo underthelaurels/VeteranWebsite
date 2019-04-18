@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS service_info;
 DROP TABLE IF EXISTS employee_info;
 DROP TABLE IF EXISTS employer_info;
 DROP TABLE IF EXISTS messages;
-DROP TABLE IF EXISTS commuity_service_events;
+DROP TABLE IF EXISTS community_service_events;
 DROP TABLE IF EXISTS jobs;
 
 CREATE TABLE employee_info (
