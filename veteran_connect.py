@@ -7,6 +7,8 @@ import click
 import db
 from auth import auth
 from user import user
+from employment import employment
+from chat import chat
 
 def create_app(test_config=None):
     # create and configure the app
@@ -36,17 +38,13 @@ def create_app(test_config=None):
 
     app.register_blueprint(user)
 
+    app.register_blueprint(employment)
+
+    app.register_blueprint(chat)
+
     @app.route('/')
     def show_hompage():
         return render_template('homepage.html')
-
-    @app.route('/base')
-    def show_base():
-        return render_template('base.html')
-
-    @app.route('/employment')
-    def show_employment():
-        return render_template('employment.html')
 
     return app
 

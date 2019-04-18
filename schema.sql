@@ -4,6 +4,9 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS service_info;
 DROP TABLE IF EXISTS employee_info;
 DROP TABLE IF EXISTS employer_info;
+DROP TABLE IF EXISTS messages;
+DROP TABLE IF EXISTS commuity_service_events;
+DROP TABLE IF EXISTS jobs;
 
 CREATE TABLE employee_info (
     employee_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -39,7 +42,6 @@ CREATE TABLE users (
 );
 
 -- Tables for the Chat system
-DROP TABLE IF EXISTS messages;
 
 CREATE TABLE messages (
     message_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -53,7 +55,6 @@ CREATE TABLE messages (
 
 
 -- Tables for the Community Service section
-DROP TABLE IF EXISTS commuity_service_events;
 
 CREATE TABLE community_service_events (
     event_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -67,7 +68,6 @@ CREATE TABLE community_service_events (
 
 
 -- Tables for the Employment section
-DROP TABLE IF EXISTS jobs;
 
 CREATE TABLE jobs (
     job_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -77,7 +77,3 @@ CREATE TABLE jobs (
     time_posted TEXT,
     due_date TEXT
 );
-
-
-
-
