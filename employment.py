@@ -45,10 +45,14 @@ def get_job():
             "job": convert_job(job)
         }
 
-        return jsonify(resp)
-
     except Exception as e:
         print "Error getting job:", e
+        resp = {
+            "status":"failure",
+            "job": ""
+        }
+        
+    return jsonify(resp)
 
 @employment.route('/delete-job', methods=['POST'])
 def delete_job():
