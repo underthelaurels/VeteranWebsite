@@ -48,7 +48,6 @@ CREATE TABLE messages (
     sent TEXT NOT NULL,
     message TEXT NOT NULL,
     channel_id INTEGER NOT NULL,
-    channel_name TEXT NOT NULL,
     sender TEXT NOT NULL,
     sender_color TEXT NOT NULL
 );
@@ -63,7 +62,8 @@ CREATE TABLE community_service_events (
     time TEXT,
     street_address TEXT,
     city TEXT,
-    state TEXT
+    state TEXT,
+    zipcode INTEGER
 );
 
 

@@ -21,8 +21,6 @@ def add_job():
 
         last = db.create_job(title, desc, industry=industry, due_date=due)
 
-        print "added job with key:", last[0][0]
-
         resp = {
             "status": "success",
             "id": last[0][0]

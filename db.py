@@ -98,6 +98,26 @@ def delete_job(id):
         print "Could not delete job from db:", e
         return False
 
+# Chat Methods
+
+def create_message(message, sender, color, id):
+    try:
+        current = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
+        db = get_db()
+        db.execute('INSERT INTO messages (sent, message, channel_id, sender, sender_color) VALUES (?, ?, ?, ?, ?)', (current, message, id, sender, color))
+        db.commit()
+        return True
+    except Exception as e:
+        print "Could not create message:", e
+        return False
+
+def get_messages_by_channel(channel_id):
+    try:
+        return query_db('SELECT * FROM messages WHERE channel_id = ?', (channel_id,))
+    except Exception as e:
+        print "Could not query db for messages:", e
+
 # Flask methods
 
 def init_app(app):
