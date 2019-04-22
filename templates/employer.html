@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Employer Portal{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<!-- Display Cards for each aspect of the app -->
+<div class="container">
+    <h4>Create a job posting!</h4>
+    <p>Reach the audience you're looking for!</p>
+
+    <div id="content" class="container col s6">
+        <form action="/employment/add-job" method="POST">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <label for="title">Job Title</label>
+                    <input type="text" name="title" id="title" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="description" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <label for="industry">Industry</label>
+                    <input type="text" name="industry" id="industry" required>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="input-field col s6 offset-s3">
+                        <label for="due">Due date</label>
+                        <input type="text" name="due" id="due" required>
+                    </div>
+                </div>
+            <div class="row center-align">
+                <button class="btn waves-effect indigo darken-4 white-text" type="submit">
+                    Create Job
+                </button>
+            </div>
+        </form>
+    
+    </div>
+
+
+</div>
+
+{% endblock %}

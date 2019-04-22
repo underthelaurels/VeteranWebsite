@@ -88,6 +88,12 @@ def get_job_by_id(uid):
     except Exception as e:
         print "Error getting job in db", e
 
+def get_all_jobs(): #Might want to limit amount.
+    try:
+        return query_db('SELECT * FROM jobs', (), one=False)
+    except Exception as e:
+        print "Error getting jobs in db", e
+
 def delete_job(id):
     try:
         db = get_db()

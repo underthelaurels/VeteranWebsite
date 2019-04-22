@@ -8,7 +8,25 @@ employment = Blueprint('employment', __name__, url_prefix='/employment')
 
 @employment.route('/')
 def show_employment():
+    jobsRow = db.get_all_jobs()
+    jobs = []
+    for job in jobsRow:
+        jobs.append(convert_job(job))
+    if jobs is not None:
+        session["jobs"] = jobs
+    if session.get("username") is not None:
+        # user = db.get_user_by_username(session.get("username"))
+        # Should actually validate they are a employer. 
+        session['employer'] = True
     return render_template('employment.html')
+
+
+@employment.route("/employer")
+def show_employer():
+    if session.get("employer") is None:
+        #403 forbidden somehow? also none of this is secure.
+        return render_template("employment.html")
+    return render_template("employer.html")
 
 # POSTs to add data to the db:
 @employment.route('/add-job', methods=['POST'])
@@ -30,7 +48,7 @@ def add_job():
             "status": "failure",
             "message": "Could not add job: " + str(e)
         }
-    return jsonify(resp)
+    return redirect("/employment")
 
 @employment.route('/get-job', methods=['GET'])
 def get_job():
