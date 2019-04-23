@@ -75,5 +75,9 @@ CREATE TABLE jobs (
     description TEXT NOT NULL,
     industry TEXT,
     time_posted TEXT,
-    due_date TEXT
+    due_date TEXT,
+    street_address TEXT NOT NULL,
+    city TEXT NOT NULL,
+    state TEXT NOT NULL,
+    zipcode INTEGER NOT NULL
 );
