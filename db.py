@@ -65,7 +65,7 @@ def get_user_by_username(username):
 
 # employment methods
 
-def create_job(title, description, industry=None, due_date=None):
+def create_job(title, description, street, city, state, zip, industry=None, due_date=None):
     """Adds a job to the db
     """
     # get current time as string
@@ -73,8 +73,8 @@ def create_job(title, description, industry=None, due_date=None):
         current = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         db = get_db()
-        db.execute('INSERT INTO jobs (title, description, industry, time_posted, due_date) VALUES (?, ?, ?, ?, ?)',
-                [title, description, industry, current, due_date])
+        db.execute('INSERT INTO jobs (title, description, industry, time_posted, due_date, street_address, city, state, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)',
+                [title, description, industry, current, due_date, street, city, state, zip])
         last = query_db('SELECT last_insert_rowid()')
         db.commit()
         return last

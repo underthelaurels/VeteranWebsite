@@ -34,10 +34,14 @@ def add_job():
     try:
         title = request.form['title']
         desc = request.form['description']
+        city = request.form['city']
+        state = request.form['state']
+        zipcode = request.form['zipcode']
+        street = request.form['street_address']
         industry = request.form.get('industry')
         due = request.form.get('due_date')
 
-        last = db.create_job(title, desc, industry=industry, due_date=due)
+        last = db.create_job(title, desc, street, city, state, zip, industry=industry, due_date=due)
 
         resp = {
             "status": "success",
