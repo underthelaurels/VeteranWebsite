@@ -4,7 +4,7 @@ jobs = [
     {
         "title": "Job 1",
         "description": "Description of job 1\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -14,7 +14,7 @@ jobs = [
     {
         "title": "Job 2",
         "description": "Description of job 2\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -24,7 +24,7 @@ jobs = [
     {
         "title": "Job 3",
         "description": "Description of job 3\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -34,7 +34,7 @@ jobs = [
     {
         "title": "Job 4",
         "description": "Description of job 4\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -44,7 +44,7 @@ jobs = [
     {
         "title": "Job 5",
         "description": "Description of job 5\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -54,7 +54,7 @@ jobs = [
     {
         "title": "Job 6",
         "description": "Description of job 6\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
@@ -64,7 +64,7 @@ jobs = [
     {
         "title": "Job 7",
         "description": "Description of job 7\ncould be multiple lines.",
-        "street": "1234 West Campus Drive",
+        "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
