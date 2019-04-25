@@ -94,7 +94,7 @@ def convert_event(row):
         'street_address': row['street_address'],
         'city': row['city'],
         'state': row['state'],
-        'zip': row['zip'],
+        'zipcode': row['zipcode'],
     }
 
     return event
