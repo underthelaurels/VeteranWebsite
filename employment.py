@@ -109,6 +109,10 @@ def convert_job(row):
         'industry': row['industry'],
         'time_posted': row['time_posted'],
         'due_date': row['due_date'],
+        'street_address': row['street_address'],
+        'city': row['city'],
+        'state': row['state'],
+        'zipcode': row['zipcode'],
     }
 
     return job

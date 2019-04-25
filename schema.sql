@@ -58,7 +58,7 @@ CREATE TABLE messages (
 CREATE TABLE community_service_events (
     event_id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    date TEXT, 
+    date TEXT NOT NULL, 
     time TEXT,
     street_address TEXT,
     city TEXT,

@@ -124,6 +124,40 @@ def get_messages_by_channel(channel_id):
     except Exception as e:
         print "Could not query db for messages:", e
 
+# Community Service Methods
+
+def create_service(name, date, time=None, street=None, city=None, state=None, zipcode=None):
+    try:
+        db = get_db()
+        db.execute('INSERT INTO community_service_events (name, date, time, street_address, city, state, zipcode) VALUES (?, ?, ?, ?, ?, ?, ?)', (name, date, time, street, city, state, zipcode))
+        db.commit()
+        return True
+    except Exception as e:
+        print "Could not add service to db"
+        return False
+
+def get_service_by_id(uid):
+    try:
+        return query_db('SELECT * FROM community_service_events WHERE event_id = ?', (uid,), one=True)
+    except Exception as e:
+        print "could not get service by id:", e
+
+def get_all_services():
+    try:
+        return query_db('SELECT * FROM community_service_events')
+    except Exception as e:
+        print "could not get all services:", e
+
+def delete_service(id):
+    try:
+        db = get_db()
+        db.execute('DELETE FROM community_service_events WHERE event_id = ?', (id,))
+        db.commit()
+        return True
+    except Exception as e:
+        print "Could not delete service event from db:", e
+        return False
+
 # Flask methods
 
 def init_app(app):
