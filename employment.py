@@ -41,7 +41,7 @@ def add_job():
         industry = request.form.get('industry')
         due = request.form.get('due_date')
 
-        last = db.create_job(title, desc, street, city, state, zip, industry=industry, due_date=due)
+        last = db.create_job(title, desc, street, city, state, zipcode, industry=industry, due_date=due)
 
         resp = {
             "status": "success",
@@ -52,7 +52,7 @@ def add_job():
             "status": "failure",
             "message": "Could not add job: " + str(e)
         }
-    return redirect("/employment")
+    return jsonify(resp)
 
 @employment.route('/get-job', methods=['GET'])
 def get_job():
