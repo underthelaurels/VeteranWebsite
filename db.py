@@ -34,13 +34,17 @@ def close_db(e=None):
 
 # User methods
 
-def create_user(username, password, first=None, last=None, email=None):
+def create_user(username, password, first=None, last=None, email=None, isEmployer=False):
     """Creates a user based on required username and password, and
     optional firstname, lastname, and email
     """
     database = get_db()
-    database.execute('INSERT INTO users (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)',
-                     (username, password, first, last, email))
+    emp_num = 0
+    if isEmployer == 'True':
+        emp_num = 1
+
+    database.execute('INSERT INTO users (username, password, firstName, lastName, email, isEmployer) VALUES (?, ?, ?, ?, ?, ?)',
+                     (username, password, first, last, email, emp_num))
     database.commit()
 
 
@@ -62,14 +66,25 @@ def get_user_by_username(username):
     """
     return get_db().execute('SELECT * FROM users WHERE username = ?', (username,)).fetchone()
 
+def update_user(uid, username, first, last, email, isEmployer):
+    try:
+        database = get_db()
+        emp = 0
+        if isEmployer:
+            emp = 1
+        database.execute('UPDATE users SET username = ?, firstName = ?, lastName = ?, email = ?, isEmployer = ? WHERE user_id = ?', (username, first, last, email, emp, uid))
+        database.commit()
+        return True
+    except Exception as e:
+        print "Could not update user in database:", e
+        return False
+
 
 # employment methods
 
 def create_job(title, description, street, city, state, zipcode, industry=None, due_date=None):
-    """Adds a job to the db
-    """
-    # get current time as string
     try:
+        # get current time as string
         current = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         db = get_db()

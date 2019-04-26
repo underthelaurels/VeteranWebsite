@@ -43,6 +43,7 @@ def register_user():
     first_name = request.form.get('first_name')
     last_name = request.form.get('last_name')
     email = request.form.get('email')
+    isEmployer = request.form.get('isEmployer')
 
     if request.method != 'POST':
         error = "Invalid request method"
@@ -55,7 +56,7 @@ def register_user():
         error = "Username {} is already registered".format(username)
     
     if error is None:
-        db.create_user(username, password, first_name, last_name, email)
+        db.create_user(username, password, first_name, last_name, email, isEmployer)
 
         resp = {
             "status": "success",

@@ -1,9 +1,55 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Profile - {{session['username']}}{% endblock %}</h1>
+<h1>{% block title %}Profile - {{session['username']}}{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-    <p>This is the profile page. Make it pretty!</p>
+<div class="row valign-wrapper my-wrapper ">
+    <div id="content" class="container col s6 center-align">
+        <h3 style="text-align: center; margin-bottom: 40px;">Update Profile - {{session['username']}}</h3>
+        <form action="/site/user/update" method="POST">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" value="{{session['username']}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="first_name">First Name</label>
+                    <input type="text" name="first_name" id="first_name" value="{{session['firstName']}}">
+                </div>
+                <div class="input-field col s6">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" value="{{session['lastName']}}">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="{{session['email']}}">
+                </div>
+                <div class="input-field col s6">
+                    <label>
+                        {% if session['isEmployer'] >= 1 %}
+                        <input name='isEmployer' id='isEmployer' type="checkbox" checked='checked' />
+                        {% else %}
+                        <input name='isEmployer' id='isEmployer' type="checkbox" />
+                        {% endif %}
+                        <span class='black-text'>Employer?</span>
+                    </label>
+                </div>
+            </div>
+            <div class="row center-align">
+                <button class="btn waves-effect indigo darken-4 white-text" type="submit">
+                    Update Profile
+                </button>
+            </div>
+        </form>
+        <button class="btn waves-effect red darken-4 white-text disabled" style='margin-top: 40px;'>
+            Change Password
+        </button>
+    </div>
+</div>
 {% endblock %}

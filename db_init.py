@@ -76,6 +76,7 @@ jobs = [
 users = [
     {
         "username":"ctom96",
+        "isEmployer":False,
         "password":"chris",
         "first_name":"Chris",
         "last_name":"Tomasello",
@@ -83,6 +84,7 @@ users = [
     },
     {
         "username":"agile",
+        "isEmployer":True,
         "password":"enhanced",
         "first_name":"Group",
         "last_name":"3",
@@ -90,6 +92,7 @@ users = [
     },
     {
         "username":"laurel",
+        "isEmployer":False,
         "password":"laurel",
         "first_name":"A G I L E",
         "last_name":"E N H A C N E D",
@@ -97,6 +100,7 @@ users = [
     },
     {
         "username":"andrew",
+        "isEmployer":False,
         "password":"andrew",
         "first_name":"A G I L E",
         "last_name":"E N H A C N E D",
@@ -104,6 +108,7 @@ users = [
     },
     {
         "username":"shawn",
+        "isEmployer":False,
         "password":"shawn",
         "first_name":"A G I L E",
         "last_name":"E N H A C N E D",
@@ -111,6 +116,7 @@ users = [
     },
     {
         "username":"kyle",
+        "isEmployer":False,
         "password":"kyle",
         "first_name":"A G I L E",
         "last_name":"E N H A C N E D",
@@ -118,6 +124,7 @@ users = [
     },
     {
         "username":"chris",
+        "isEmployer":False,
         "password":"chris",
         "first_name":"A G I L E",
         "last_name":"E N H A C N E D",
