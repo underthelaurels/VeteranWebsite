@@ -66,3 +66,9 @@
         display: none;
     }
 }
+
+/* Posting a job */
+
+.datepicker-date-display {
+    background-color: #01579b;
+}

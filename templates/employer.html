@@ -6,46 +6,77 @@
 
 {% block content %}
 <!-- Display Cards for each aspect of the app -->
-<div class="container">
+<div id='content' class="container">
     <h4>Create a job posting!</h4>
     <p>Reach the audience you're looking for!</p>
 
-    <div id="content" class="container col s6">
-        <form action="/employment/add-job" method="POST">
-            <div class="row">
-                <div class="input-field col s6 offset-s3">
-                    <label for="title">Job Title</label>
-                    <input type="text" name="title" id="title" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6 offset-s3">
-                    <label for="description">Description</label>
-                    <input type="text" name="description" id="description" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6 offset-s3">
-                    <label for="industry">Industry</label>
-                    <input type="text" name="industry" id="industry" required>
-                </div>
-            </div>
+    <form action="/employment/site/add-job" method="POST">
+        <div class="row">
+            <div id='left-column' class="col s12 m4">
                 <div class="row">
-                    <div class="input-field col s6 offset-s3">
-                        <label for="due">Due date</label>
-                        <input type="text" name="due" id="due" required>
+                    <div class="input-field">
+                        <label for="title">Job Title</label>
+                        <input type="text" name="title" id="title" required>
                     </div>
                 </div>
-            <div class="row center-align">
-                <button class="btn waves-effect indigo darken-4 white-text" type="submit">
-                    Create Job
-                </button>
-            </div>
-        </form>
-    
-    </div>
-
-
+                <div class="row">
+                    <div class="input-field">
+                        <label for="industry">Industry</label>
+                        <input type="text" name="industry" id="industry" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <label for="due">Due date</label>
+                        <input type="text" class="datepicker" name="due" id="due" required>
+                    </div>
+                </div>
+            </div> <!-- END LEFT COLUMN -->
+            <div id='right-column' class="col s12 m6 offset-m1">
+                <div class="row">
+                    <div class="input-field">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field">
+                        <label for="street_address">Street Address</label>
+                        <input type="text" name="street_address" id="street_address" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12 m4">
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" required>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" required>
+                    </div>
+                    <div class="input-field col s12 m4">
+                        <label for="zipcode">Zip</label>
+                        <input type="text" name="zipcode" id="zipcode" required>
+                    </div>
+                </div>
+            </div> <!-- END RIGHT COLUMN -->
+        </div>
+        <div class="row center-align">
+            <button class="btn waves-effect indigo darken-4 white-text" type="submit">
+                Create Job
+            </button>
+        </div>
+    </form>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Loading date picker...")
+        var elems = document.querySelectorAll('.datepicker');
+        var options = {
+            format: "yyyy-mm-dd"
+        }
+        var instances = M.Datepicker.init(elems, options);
+    });
+</script>
 
 {% endblock %}
