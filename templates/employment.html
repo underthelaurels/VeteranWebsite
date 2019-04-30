@@ -12,7 +12,11 @@
        If yours is still active, you should check out these job postings.</p>
 
     {% if session["employer"] %}
-        <a href="/employment/employer">Add a job posting</a>
+        <div class="fixed-action-btn">
+            <a class="btn btn-large light-blue darken-4" href="/employment/employer">
+                Create a Posting
+            </a>
+        </div>
     {% endif %}
 
     <ul class="collection">
@@ -29,7 +33,12 @@
             {% endfor %}
         {% endif %}
     </ul>
-
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.fixed-action-btn');
+        var instances = M.FloatingActionButton.init(elems, options);
+    });
+</script>
 
 {% endblock %}
