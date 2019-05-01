@@ -24,6 +24,26 @@ def show_employment():
 
     return render_template('employment.html')
 
+@employment.route('/all', methods=['GET'])
+def get_all_jobs():
+    try:
+        rows = db.get_all_jobs()
+
+        jobs = [convert_job(x) for x in rows]
+
+        if jobs is not None:
+            resp = {
+                "status": "success",
+                "jobs": jobs
+            }
+        else:
+            resp = {
+                "status": "failure",
+                "message": "Could not get all the jobs"
+            }
+        return jsonify(resp)
+    except Exception as e:
+        print "Error getting all jobs:", e
 
 @employment.route("/employer")
 def show_employer():
