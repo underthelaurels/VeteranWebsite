@@ -7,7 +7,16 @@ service = Blueprint('service', __name__, url_prefix='/service')
 
 @service.route('/', methods=['GET'])
 def show_service():
+    row = db.get_all_services()
+    service = [convert_event(x) for x in row]
+
+    if service is not None:
+        session["service"] = service
     return render_template('community_service.html')
+
+@service.route('/create', methods=['GET'])
+def show_service_create():
+    return render_template('community_service_create.html')
 
 @service.route('/add-event', methods=['POST'])
 def add_event():

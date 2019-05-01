@@ -1,9 +1,31 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h1>{% block title %}Community Service{% endblock %}</h1>
+<h1>{% block title %}Home{% endblock %}</h1>
 {% endblock %}
 
 {% block content %}
-    <p>This is the community service page. Make it pretty!</p>
+<!-- Display Cards for each aspect of the app -->
+<div class="container">
+    <h4>Volunteering Opportunities</h4>
+    <p>Continuing giving to the community through these postings.</p>
+    <a href="/service/create">Add a event posting</a>
+
+    <ul class="collection">
+        
+        {% if session["service"] %}
+            {% for event in session["service"] %}
+
+                <li class="collection-item">
+                    <h5>{{event['name']}}</h5>
+                    <i>{{event['date']}}, at {{event['time']}}</i>
+                    <p>{{event['description']}}</p>
+                </li>
+
+            {% endfor %}
+        {% endif %}
+    </ul>
+
+</div>
+
 {% endblock %}
