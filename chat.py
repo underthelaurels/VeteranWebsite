@@ -7,7 +7,7 @@ chat = Blueprint('chat', __name__, url_prefix='/chat')
 
 @chat.route('/')
 def show_chat():
-    return render_template('chat')
+    return render_template('chat.html')
 
 @chat.route('/send', methods=['POST'])
 def send_message():

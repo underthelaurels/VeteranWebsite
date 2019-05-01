@@ -8,7 +8,7 @@
 <!-- Display Cards for each aspect of the app -->
 <div class="container">
     <h4>Volunteering Opportunities</h4>
-    <p>Continuing giving to the community through these postings.</p>
+    <p>Continue giving to the community through these postings.</p>
     <a href="/service/create">Add a event posting</a>
 
     <ul class="collection">
@@ -19,7 +19,8 @@
                 <li class="collection-item">
                     <h5>{{event['name']}}</h5>
                     <i>{{event['date']}}, at {{event['time']}}</i>
-                    <p>{{event['description']}}</p>
+                    <p>{{event['street_address']}}</p>
+                    <p>{{event['city']}}, {{event['state']}}</p>
                 </li>
 
             {% endfor %}
