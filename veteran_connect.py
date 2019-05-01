@@ -10,6 +10,7 @@ from user import user
 from employment import employment
 from chat import chat
 from community_service import service
+from about_us import about_us
 
 def create_app(test_config=None):
     # create and configure the app
@@ -44,6 +45,8 @@ def create_app(test_config=None):
     app.register_blueprint(chat)
     
     app.register_blueprint(service)
+
+    app.register_blueprint(about_us)
 
     @app.route('/')
     def show_hompage():
