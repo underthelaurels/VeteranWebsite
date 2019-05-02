@@ -3,7 +3,7 @@
 jobs = [
     {
         "title": "Job 1",
-        "description": "Description of job 1\ncould be multiple lines.",
+        "description": "A small sample description. This job is fully automated, so no human intervention necessary",
         "street_address": "1234 West Campus Drive",
         "city":"Blacksburg",
         "state":"Virginia",
@@ -12,64 +12,64 @@ jobs = [
         "due_date":"2018-05-08"
     },
     {
-        "title": "Job 2",
-        "description": "Description of job 2\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
+        "title": "Lorem Ipsum",
+        "description": """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus a tortor ut semper. Proin lobortis, dui nec efficitur commodo, magna mauris lacinia lacus, eu rutrum dui augue ut nulla. Morbi sit amet eleifend erat. Donec vulputate ut nisi eget condimentum. Vestibulum finibus venenatis lacus, sit amet suscipit ex porta in. Mauris elementum nisl ut mauris laoreet, quis placerat odio lobortis. Suspendisse aliquam, dolor vitae egestas blandit, ipsum leo tincidunt mi, quis molestie nulla ex eget est. Curabitur quis tellus bibendum, pharetra augue nec, laoreet ex. Donec fermentum a est ut consectetur. Cras laoreet nec mi sed sollicitudin. Pellentesque non feugiat magna.  Phasellus euismod eget massa sed tincidunt. Aenean eu felis dolor. Duis viverra odio vitae magna euismod commodo. Quisque neque risus, consequat vel sodales et, tempus eu odio. Integer interdum egestas est, quis congue metus scelerisque sit amet. Ut dolor elit, scelerisque nec tempor sit amet, fringilla faucibus augue. Suspendisse odio enim, tincidunt sit amet diam id, vestibulum placerat justo. Phasellus vel sollicitudin nulla.  Duis dictum pulvinar lacus quis eleifend. Mauris ut enim est. Aliquam eget magna tincidunt, molestie dolor in, dignissim velit. Nulla ut nibh sit amet ante venenatis feugiat at nec augue. Fusce sed augue quis eros tristique vehicula at ut elit. Sed vel sem eleifend, ultrices justo non, bibendum nunc. Pellentesque vitae commodo sem, sed fermentum tellus. Aenean euismod ante sit amet risus condimentum luctus. Aliquam sagittis mauris ac eros sollicitudin aliquam. Nunc eu varius nibh, eget rutrum leo. Ut condimentum velit eu odio rutrum pellentesque. Etiam cursus a mi sed finibus. Suspendisse sed urna aliquam, tempor lacus sit amet, sodales elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam varius nisi quis purus pretium, at viverra risus tincidunt. Nulla quam velit, aliquam non mattis nec, posuere ut lectus.  Praesent bibendum porta tellus, sed aliquet orci dictum ac. Vestibulum interdum bibendum metus, vitae dapibus lectus condimentum eu. Donec id sapien nulla. Ut urna neque, tempor non lacus ut, placerat sodales massa. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris nulla lacus, facilisis eu turpis vel, iaculis tincidunt justo. Phasellus auctor quam quam, vitae pulvinar ligula eleifend at. Integer accumsan dapibus neque, ut pellentesque sem molestie ac. Praesent fringilla est non purus malesuada faucibus. Maecenas egestas efficitur quam sed tristique. Nunc massa nisi, iaculis et ligula eget, volutpat faucibus urna. Ut tempus, arcu quis rhoncus molestie, leo enim malesuada magna, a convallis augue arcu vitae nulla. Nam ut semper massa. Duis sodales sem nec elit porta, mattis egestas velit mollis. Suspendisse commodo, nulla id maximus luctus, nunc metus venenatis dui, eu fringilla justo ex in nisl. In hac habitasse platea dictumst.  Curabitur eu sem lacinia, facilisis nisl non, maximus tortor. Praesent nunc ipsum, ultrices at mattis in, convallis in erat. Maecenas at purus nulla. Mauris in arcu at risus viverra iaculis. Aliquam in luctus enim, at ultrices ipsum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer metus neque, accumsan sit amet felis vitae, pharetra semper diam. Donec placerat pretium erat et pulvinar. Pellentesque ac nulla enim. Donec vitae ullamcorper risus, vitae condimentum mi. Fusce cursus sodales eleifend. Aenean eget rhoncus velit, sit amet sollicitudin erat. Nullam sagittis nec erat ut viverra. Sed luctus tortor eget nisi vehicula, in vestibulum est viverra. Mauris enim odio, commodo a velit id, hendrerit tincidunt justo. Fusce vulputate ultricies lacus vitae imperdiet.""",
+        "street_address": "1414 N Main St",
+        "city":"Blacksburg",
+        "state":"Virginia",
+        "zipcode":23024,
+        "industry":"Food Services",
+        "due_date":"2018-05-08"
+    },
+    {
+        "title": "Lorem Ipsum 2",
+        "description": """Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam cursus a tortor ut semper. Proin lobortis, dui nec efficitur commodo, magna mauris lacinia lacus, eu rutrum dui augue ut nulla. Morbi sit amet eleifend erat. Donec vulputate ut nisi eget condimentum. Vestibulum finibus venenatis lacus, sit amet suscipit ex porta in. Mauris elementum nisl ut mauris laoreet, quis placerat odio lobortis. Suspendisse aliquam, dolor vitae egestas blandit, ipsum leo tincidunt mi, quis molestie nulla ex eget est. Curabitur quis tellus bibendum, pharetra augue nec, laoreet ex. Donec fermentum a est ut consectetur. Cras laoreet nec mi sed sollicitudin. Pellentesque non feugiat magna.  Phasellus euismod eget massa sed tincidunt. Aenean eu felis dolor. Duis viverra odio vitae magna euismod commodo. Quisque neque risus, consequat vel sodales et, tempus eu odio. Integer interdum egestas est, quis congue metus scelerisque sit amet. Ut dolor elit, scelerisque nec tempor sit amet, fringilla faucibus augue. Suspendisse odio enim, tincidunt sit amet diam id, vestibulum placerat justo. Phasellus vel sollicitudin nulla.  Duis dictum pulvinar lacus quis eleifend. Mauris ut enim est. Aliquam eget magna tincidunt, molestie dolor in, dignissim velit. Nulla ut nibh sit amet ante venenatis feugiat at nec augue. Fusce sed augue quis eros tristique vehicula at ut elit. Sed vel sem eleifend, ultrices justo non, bibendum nunc. Pellentesque vitae commodo sem, sed fermentum tellus. Aenean euismod ante sit amet risus condimentum luctus. Aliquam sagittis mauris ac eros sollicitudin aliquam. Nunc eu varius nibh, eget rutrum leo. Ut condimentum velit eu odio rutrum pellentesque. Etiam cursus a mi sed finibus. Suspendisse sed urna aliquam, tempor lacus sit amet, sodales elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam varius nisi quis purus pretium, at viverra risus tincidunt. Nulla quam velit, aliquam non mattis nec, posuere ut lectus.""",
+        "street_address": "1414 N Main St",
+        "city":"Blacksburg",
+        "state":"Virginia",
+        "zipcode":23024,
+        "industry":"Food Services",
+        "due_date":"2018-05-08"
+    },
+    {
+        "title": "Software Engineer C++",
+        "description": "We're looking for senior software engineering professionals with deep strengths in developing software written in modern C++.  As a developer, you will work closely with a small passionate team to advance the development of high quality safety-critical software for self-driving vehicles.  As a software engineer, you will work closely with one of many teams specializing in either machine learning, path planning, perception, infrastructure, or mapping. ",
+        "street_address": "TORC Robotics",
         "city":"Blacksburg",
         "state":"Virginia",
         "zipcode":23024,
         "industry":"Automated Testing",
         "due_date":"2018-05-08"
     },
+]
+
+events = [
     {
-        "title": "Job 3",
-        "description": "Description of job 3\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
-        "city":"Blacksburg",
-        "state":"Virginia",
-        "zipcode":23024,
-        "industry":"Automated Testing",
-        "due_date":"2018-05-08"
+        "name": "The Big Event",
+        "date": "2018-03-30",
+        "time": "9:00AM",
+        "street": "Drillfield",
+        "city": "Blacksburg",
+        "state": "Virginia",
+        "zipcode": "24061",
     },
     {
-        "title": "Job 4",
-        "description": "Description of job 4\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
-        "city":"Blacksburg",
-        "state":"Virginia",
-        "zipcode":23024,
-        "industry":"Automated Testing",
-        "due_date":"2018-05-08"
+        "name": "The Small Event",
+        "date": "2018-04-20",
+        "time": "11:00PM",
+        "street": "Drillfield",
+        "city": "Blacksburg",
+        "state": "Virginia",
+        "zipcode": "24061",
     },
     {
-        "title": "Job 5",
-        "description": "Description of job 5\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
-        "city":"Blacksburg",
-        "state":"Virginia",
-        "zipcode":23024,
-        "industry":"Automated Testing",
-        "due_date":"2018-05-08"
-    },
-    {
-        "title": "Job 6",
-        "description": "Description of job 6\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
-        "city":"Blacksburg",
-        "state":"Virginia",
-        "zipcode":23024,
-        "industry":"Automated Testing",
-        "due_date":"2018-05-08"
-    },
-    {
-        "title": "Job 7",
-        "description": "Description of job 7\ncould be multiple lines.",
-        "street_address": "1234 West Campus Drive",
-        "city":"Blacksburg",
-        "state":"Virginia",
-        "zipcode":23024,
-        "industry":"Automated Testing",
-        "due_date":"2018-05-08"
+        "name": "Pass the Class",
+        "date": "2018-05-08",
+        "time": "All Day",
+        "street": "Torg 1050",
+        "city": "Blacksburg",
+        "state": "Virginia",
+        "zipcode": "24061",
     },
 ]
 
@@ -143,7 +143,11 @@ if __name__ == "__main__":
     
     for job in jobs:
         print "Posting job", job['title']
-        r = requests.post('http://'+ip+'/employment/add-job', data=job)
+        requests.post('http://'+ip+'/employment/add-job', data=job)
+
+    for event in events:
+        print "Posting event", event['name']
+        requests.post('http://'+ip+'/service/add-event', data=event)
     
     for user in users:
         print "posting user", user['username']
