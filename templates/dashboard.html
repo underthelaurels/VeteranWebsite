@@ -6,7 +6,7 @@
 
 {% block content %}
 <!-- Display Cards for each aspect of the app -->
-<div class="container" id="card-content">
+<div class="container" id="dashboard-content">
     <div class="row">
         <div class="col s12 l4">
             <div class="card">
@@ -18,7 +18,7 @@
                   <p>Find employment opportunities specifically available to you.</p>
                  </div>
                 <div class="card-action">
-                  <a href="/employment">Go to Employment</a>
+                  <a href="/employment" class="green-text text-darken-4 bold-text">Go to Employment</a>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                     <p>Find and help local organizations to build your community.</p>
                 </div>
                 <div class="card-action">
-                    <a href="/service">Go to Community Service</a>
+                    <a href="/service" class="green-text text-darken-4 bold-text">Go to Community Service</a>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                     <p>Talk to other veterans to ask any questions you might have.</p>
                 </div>
                 <div class="card-action">
-                    <a href="/chat">Go to Chats</a>
+                    <a href="/chat" class="green-text text-darken-4 bold-text">Go to Chat</a>
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
                     <p>Benefits available to you as a veteran.</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">Go to Benefits</a>
+                    <a onclick="toast_not_avail()" style='cursor: pointer;' class="green-text text-darken-4 bold-text">Go to Benefits</a>
                 </div>
             </div>
         </div>
@@ -76,7 +76,7 @@
                     <p>Tell others about who you are.</p>
                 </div>
                 <div class="card-action">
-                    <a href="/profile">Go to Profile</a>
+                    <a onclick="toast_not_avail()" style='cursor: pointer;' class="green-text text-darken-4 bold-text">Go to Stories</a>
                 </div>
             </div>
         </div>
@@ -90,11 +90,19 @@
                     <p>Come back later.</p>
                 </div>
                 <div class="card-action">
-                    <a href="/profile">link tbd</a>
+                    <a onclick="toast_not_avail()" style='cursor: pointer;' class="green-text text-darken-4 bold-text">link tbd</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function toast_not_avail() {
+        M.toast({
+            html: "This feature is not yet available",
+            classes: "rounded red darken-4"
+        })
+    }
+</script>
 
 {% endblock %}

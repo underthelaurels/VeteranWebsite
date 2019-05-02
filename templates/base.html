@@ -23,7 +23,7 @@
     <header>
         <nav>
             <div class="nav-wrapper light-blue darken-4">
-                <a href="/" class="brand-logo" id="veteran-connect-logo">Veteran Connect</a>
+                <a href="/" class="brand-logo center" id="veteran-connect-logo">Veteran Connect</a>
                 <ul id="nav-dropdown" class="dropdown-content">
                     {% if session['user_id'] %}
                     <li><span id="sign-out-dropdown">Sign Out</span></li>
@@ -34,12 +34,15 @@
                     <li><a href="/register">Register</a></li>
                     {% endif %}
                     <li><a href="/dashboard">Dashboard</a></li>
-
                 </ul>
+                <a href="#" data-target="nav-mobile-side" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="/employment">Employment</a></li>
-                    <li><a href="/service">Community Service</a></li>
-                    <li><a href="/chat">Chat</a></li>
+                    {% if session['user_id'] %}
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    {% else %}
+                    <li><a href="/login">Sign In</a></li>
+                    <li><a href="/register">Register</a></li>
+                    {% endif %}
                     <li>
                         <a class="dropdown-trigger" href="#!" data-target="nav-dropdown">
                             {% if session['user_id'] %}
@@ -52,6 +55,16 @@
                 </ul>
             </div>
         </nav>
+        <ul id="nav-mobile-side" class="sidenav">
+            <li><a href="/dashboard">Dashboard</a></li>
+            {% if session['user_id'] %}
+            <li><a href="/profile">Profile</a></li>
+            <li><a id="sign-out-dropdown-mobile">Sign Out</a></li>
+            {% else %}
+            <li><a href="/login">Sign In</a></li>
+            <li><a href="/register">Register</a></li>
+            {% endif %}
+        </ul>
     </header>
     <main>
 
@@ -71,7 +84,6 @@
               <h5 class="white-text">Links</h5>
               <ul>
                 <li><a class="grey-text text-lighten-3" href="/about_us">Who We Are</a></li>
-                <li><a class="grey-text text-lighten-3" href="/about_us">Contact Us</a></li>
               </ul>
             </div>
           </div>
@@ -86,6 +98,11 @@
                 "alignment":"right"
             }
             var instances = M.Dropdown.init(elems, options);
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems, null);
         });
 
         // Process Flashes
@@ -107,8 +124,8 @@
 
     </script>
     <script>
-        const BASE_URL = 'http://35.245.223.73'; // Google Base URL
-        // const BASE_URL = 'http://127.0.01:5000'
+        // const BASE_URL = 'http://35.245.223.73'; // Google Base URL
+        const BASE_URL = 'http://127.0.01:5000'
 
         window.BASE_URL = BASE_URL;
 
@@ -134,6 +151,13 @@
         EVENT LISTENERS
         */
         dropdown = document.getElementById("sign-out-dropdown")
+        if (dropdown) {
+            dropdown.addEventListener('click', function() {
+                signOut("{{session['username']}}")
+            })
+        }
+
+        dropdown = document.getElementById("sign-out-dropdown-mobile")
         if (dropdown) {
             dropdown.addEventListener('click', function() {
                 signOut("{{session['username']}}")

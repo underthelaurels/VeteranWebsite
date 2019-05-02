@@ -133,10 +133,12 @@ def make_employer():
 # Helper functions
 
 def convert_job(row):
+    paras = row['description'].split('  ')
+
     job = {
         'job_id': row['job_id'],
         'title': row['title'],
-        'description': row['description'],
+        'description': paras,
         'industry': row['industry'],
         'time_posted': row['time_posted'],
         'due_date': row['due_date'],

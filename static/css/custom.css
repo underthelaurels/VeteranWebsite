@@ -2,9 +2,9 @@
     top: 100% !important;
 }
 
-#veteran-connect-logo {
+/* #veteran-connect-logo {
     padding-left: 20px;
-}
+} */
 
 .dropdown-trigger {
     font-weight: bold;
@@ -71,4 +71,10 @@
 
 .datepicker-date-display {
     background-color: #01579b;
+}
+
+/* Dashboard */
+
+#dashboard-content {
+    margin-top: 20px;
 }
