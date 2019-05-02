@@ -23,15 +23,20 @@
         
         {% if session["jobs"] %}
             {% for job in session["jobs"] %}
-
                 <li class="collection-item">
                     <h5>{{job['title']}}</h5>
+                    {% if job['due_date'] %}
+                    <span>Sumbit Application By: <b>{{job['due_date']}}</b></span>
+                    {% endif %}
+                    <br>
                     <i>{{job['industry']}}</i>
+                    <br><br>
+                    <span>{{job['street_address']}}</span><br>
+                    <span>{{job['city']}}, {{job['state']}} {{job['zipcode']}}</span>
                     {% for para in job['description'] %}
                     <p>{{para}}</p>
                     {% endfor %}
                 </li>
-
             {% endfor %}
         {% endif %}
     </ul>
